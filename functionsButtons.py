@@ -47,8 +47,7 @@ def execute_notas_barramento_query(main_window):
                 main_window.result_text_edit.setText("Erro: A variável não foi fornecida.")
                 return
 
-            query = queries.NOTAS_PELO_BARRAMENTO.format(input_value)
-            #query = queries.MUDAR_FASE_1.format(input_value)  
+            query = queries.NOTAS_PELO_BARRAMENTO.format(input_value) 
             main_window.cursor.execute(query)
             result = main_window.cursor.fetchall()
 
@@ -76,21 +75,17 @@ def abrir_fechar_notas_page(main_window):
     main_window.input_field.setPlaceholderText("Digite a nota:")
     main_window.abertura_notas_layout.addWidget(main_window.input_field)
 
-    # Label para exibir resultados
     main_window.result_label = QLabel("")
     main_window.abertura_notas_layout.addWidget(main_window.result_label)
 
-    # Botão de abrir nota
     main_window.abrir_nota_button = QPushButton("Abrir nota")
     main_window.abrir_nota_button.clicked.connect(lambda: abrir_nota_query(main_window))
     main_window.abertura_notas_layout.addWidget(main_window.abrir_nota_button)
 
-    # Botão de fechar nota
     main_window.fechar_nota_button = QPushButton("Fechar nota")
     main_window.fechar_nota_button.clicked.connect(lambda: fechar_nota_query(main_window))
     main_window.abertura_notas_layout.addWidget(main_window.fechar_nota_button)
-
-    # Botão de voltar    
+  
     main_window.back_button = QPushButton("Voltar")
     main_window.back_button.clicked.connect(main_window.go_back)
     main_window.abertura_notas_layout.addWidget(main_window.back_button)
@@ -117,7 +112,7 @@ def abrir_nota_query(main_window):
 
             query = queries.ABRIR_NOTA.format(input_value)
             main_window.cursor.execute(query)
-            main_window.connection.commit()  # Confirmar a alteração no banco
+            main_window.connection.commit()
 
             main_window.result_label.setText(f"Nota {input_value} aberta com sucesso!")
 
@@ -141,7 +136,7 @@ def fechar_nota_query(main_window):
 
             query = queries.FECHAR_NOTA.format(input_value)
             main_window.cursor.execute(query)
-            main_window.connection.commit()  # Confirmar a alteração no banco
+            main_window.connection.commit()
 
             main_window.result_label.setText(f"Nota {input_value} fechada com sucesso!")
 
@@ -169,16 +164,13 @@ def alterar_barramento_page(main_window):
     main_window.input_field2.setPlaceholderText("Digite o barramento existente na base:")
     main_window.alterar_barramento_layout.addWidget(main_window.input_field2)
 
-    # Label para exibir resultados
     main_window.result_label = QLabel("")
     main_window.alterar_barramento_layout.addWidget(main_window.result_label)
 
-    # Botão de abrir nota
     main_window.execute_button = QPushButton("Executar")
     main_window.execute_button.clicked.connect(lambda: alterar_barramento_query(main_window))
     main_window.alterar_barramento_layout.addWidget(main_window.execute_button)
 
-    # Botão de voltar    
     main_window.back_button = QPushButton("Voltar")
     main_window.back_button.clicked.connect(main_window.go_back)
     main_window.alterar_barramento_layout.addWidget(main_window.back_button)
@@ -206,7 +198,7 @@ def alterar_barramento_query(main_window):
 
             query = queries.ALTERAR_BARRAMENTO.format(input_value1, input_value2)
             main_window.cursor.execute(query)
-            main_window.connection.commit()  # Confirmar a alteração no banco
+            main_window.connection.commit()
             
 
             main_window.result_label.setText("Comando executado!")
@@ -228,16 +220,13 @@ def retroceder_carga_page(main_window):
     main_window.input_field.setPlaceholderText("Digite o número da nota:")
     main_window.retroceder_carga_layout.addWidget(main_window.input_field)
 
-    # Label para exibir resultados
     main_window.result_label = QLabel("")
     main_window.retroceder_carga_layout.addWidget(main_window.result_label)
 
-    # Botão de abrir nota
     main_window.execute_button = QPushButton("Executar")
     main_window.execute_button.clicked.connect(lambda: retroceder_carga_query(main_window))
     main_window.retroceder_carga_layout.addWidget(main_window.execute_button)
-
-    # Botão de voltar    
+   
     main_window.back_button = QPushButton("Voltar")
     main_window.back_button.clicked.connect(main_window.go_back)
     main_window.retroceder_carga_layout.addWidget(main_window.back_button)
@@ -264,11 +253,11 @@ def retroceder_carga_query(main_window):
 
             query = queries.RETROCEDER_CARGA_1.format(input_value)
             main_window.cursor.execute(query)
-            main_window.connection.commit()  # Confirmar a alteração no banco
+            main_window.connection.commit()
 
             query = queries.RETROCEDER_CARGA_2.format(input_value)
             main_window.cursor.execute(query)
-            main_window.connection.commit()  # Confirmar a alteração no banco
+            main_window.connection.commit()
             
 
             main_window.result_label.setText("Comando executado!")
@@ -297,16 +286,13 @@ def mudar_fase_page(main_window):
     main_window.input_field2.setPlaceholderText("Digite a fase dos trechos:")
     main_window.mudar_fase_layout.addWidget(main_window.input_field2)
 
-    # Label para exibir resultados
     main_window.result_label = QLabel("")
     main_window.mudar_fase_layout.addWidget(main_window.result_label)
 
-    # Botão de abrir nota
     main_window.execute_button = QPushButton("Executar")
     main_window.execute_button.clicked.connect(lambda: mudar_fase_query(main_window))
     main_window.mudar_fase_layout.addWidget(main_window.execute_button)
-
-    # Botão de voltar    
+  
     main_window.back_button = QPushButton("Voltar")
     main_window.back_button.clicked.connect(main_window.go_back)
     main_window.mudar_fase_layout.addWidget(main_window.back_button)
@@ -376,16 +362,13 @@ def remover_ip_page(main_window):
     main_window.input_field2.setPlaceholderText("Digite o barramento do poste 1:")
     main_window.remover_ip_layout.addWidget(main_window.input_field2)
 
-    # Label para exibir resultados
     main_window.result_label = QLabel("")
     main_window.remover_ip_layout.addWidget(main_window.result_label)
 
-    # Botão de abrir nota
     main_window.execute_button = QPushButton("Executar")
     main_window.execute_button.clicked.connect(lambda: remover_ip_query(main_window))
     main_window.remover_ip_layout.addWidget(main_window.execute_button)
-
-    # Botão de voltar    
+  
     main_window.back_button = QPushButton("Voltar")
     main_window.back_button.clicked.connect(main_window.go_back)
     main_window.remover_ip_layout.addWidget(main_window.back_button)
