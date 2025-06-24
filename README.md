@@ -68,7 +68,7 @@ pyinstaller SQL_Interface.spec
 
 ## 📄 Licença
 
-Este produto está licenciado sob a responsabilidade da Progeo Engenharia, da Equatorial.
+Este produto está licenciado sob a responsabilidade da Progeo Engenharia, à serviço da Equatorial Energia.
 
 ---
 ## 👤 Autor
