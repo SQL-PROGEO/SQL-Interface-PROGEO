@@ -30,17 +30,16 @@ Este projeto é uma aplicação desktop desenvolvida em **Python** com **PyQt6**
 
 1. **Clone o repositório**
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
+   git clone https://https://github.com/SQL-PROGEO/SQL-Interface-PROGEO
+   cd SQL-Interface-PROGEO
 
 
 2. **Instale as dependências**
 
    ```bash
    pip install PyQt6
+   pip install oracledb
    ```
-
-   > Adicione outras bibliotecas necessárias conforme utilizadas no `connectDB.py` ou `queries.py`.
 
 3. **Execute o projeto**
 
@@ -56,8 +55,6 @@ Para gerar um executável:
 pyinstaller SQL_Interface.spec
 ```
 
-Certifique-se de que todos os arquivos necessários estão corretamente especificados no `.spec`.
-
 ## 🧠 Módulos
 
 | Arquivo               | Descrição                                              |
@@ -71,7 +68,7 @@ Certifique-se de que todos os arquivos necessários estão corretamente especifi
 
 ## 📄 Licença
 
-Este projeto está licenciado sob a [MIT License](LICENSE).
+Este produto está licenciado sob a responsabilidade da Progeo Engenharia, da Equatorial.
 
 ---
 ## 👤 Autor
